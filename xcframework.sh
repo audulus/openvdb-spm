@@ -15,6 +15,8 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
       -DCMAKE_INSTALL_PREFIX="$(pwd)/install" \
+      -DBUILD_SHARED_LIBS=NO \
+      -DBUILD_STATIC_LIBS=YES \
       ..
 make -j8 install
 cd ..
@@ -30,6 +32,8 @@ cmake -GXcode \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
       -DCMAKE_XCODE_ATTRIBUTE_ONLY_ACTIVE_ARCH=NO \
       -DCMAKE_IOS_INSTALL_COMBINED=YES \
+      -DBUILD_SHARED_LIBS=NO \
+      -DBUILD_STATIC_LIBS=YES \
       .. 
 
 xcodebuild -configuration Release install
