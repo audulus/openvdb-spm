@@ -17,6 +17,9 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX="$(pwd)/install" \
       -DBUILD_SHARED_LIBS=NO \
       -DBUILD_STATIC_LIBS=YES \
+      -DBoost_NO_SYSTEM_PATHS=ON \
+      -DBOOST_INCLUDEDIR=../../boost \
+      -DBOOST_LIBRARYDIR=../../boost/stage/lib \
       ..
 make -j8 install
 cd ..
@@ -34,6 +37,9 @@ cmake -GXcode \
       -DCMAKE_IOS_INSTALL_COMBINED=YES \
       -DBUILD_SHARED_LIBS=NO \
       -DBUILD_STATIC_LIBS=YES \
+      -DBoost_NO_SYSTEM_PATHS=YES \
+      -DBOOST_INCLUDEDIR=../../boost \
+      -DBOOST_LIBRARYDIR=../../boost/stage/lib \
       .. 
 
 xcodebuild -configuration Release install
