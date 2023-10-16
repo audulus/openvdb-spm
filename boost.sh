@@ -23,15 +23,9 @@ using clang : iphonesimulator
 ;
 EOF
 
-for lib in libboost_iostreams.a
-do
+# Build arm64
+./b2 -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs link=static --with-iostreams 
 
-    # Build arm64
-    ./b2 -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs link=static $lib 
-    # mv $dir/$lib $dir/arm64_$lib
+# Build for simulator
+#./b2 -a -j4 toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static $lib 
 
-    # Build for simulator
-    #./b2 -a -j4 toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static $lib 
-    #mv $dir/$lib $dir/arm64_sim_$lib
-
-done
