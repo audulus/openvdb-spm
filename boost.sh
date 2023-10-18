@@ -1,5 +1,6 @@
 
 rm -rf boost
+rm -f boost_1_83_0.tar.bz2
 
 # git clone https://github.com/boostorg/boost.git
 # git submodule update --recursive --init
