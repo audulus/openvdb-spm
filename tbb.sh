@@ -11,4 +11,4 @@ cd tbb
 mkdir build
 cd build
 cmake ..
-make
+make -j 12
