@@ -1,5 +1,6 @@
 
 set -e
+set -x
 
 rm -rf openvdb 
 rm -rf openvdb.xcframework
@@ -18,8 +19,9 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=NO \
       -DBUILD_STATIC_LIBS=YES \
       -DBoost_NO_SYSTEM_PATHS=ON \
-      -DBOOST_INCLUDEDIR=../../boost \
-      -DBOOST_LIBRARYDIR=../../boost/stage/lib \
+      -DBoost_NO_WARN_NEW_VERSIONS=1 \
+      -DBoost_INCLUDE_DIR=../../../boost \
+      -DBOOST_LIBRARYDIR=../../../boost/stage/lib \
       ..
 make -j8 install
 cd ..
