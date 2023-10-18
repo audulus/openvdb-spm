@@ -1,6 +1,9 @@
 
+# See https://formulae.brew.sh/formula/boost
+
 rm -rf boost
 rm -f boost_1_83_0.tar.bz2
+mkdir -f deps
 
 # git clone https://github.com/boostorg/boost.git
 # git submodule update --recursive --init
@@ -10,7 +13,7 @@ tar zxf boost_1_83_0.tar.bz2
 mv boost_1_83_0 boost
 
 cd boost
-./bootstrap.sh
+./bootstrap.sh --prefix=deps
 
 cat << EOF >> project-config.jam
 # IOS ARM64
@@ -25,7 +28,7 @@ using clang : iphonesimulator
 EOF
 
 # Build arm64
-./b2 -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams 
+./b2 --prefix=deps -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams 
 
 # Build for simulator
 #./b2 -a -j4 toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static $lib 
