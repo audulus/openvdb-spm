@@ -21,7 +21,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBoost_NO_SYSTEM_PATHS=ON \
       -DBoost_NO_WARN_NEW_VERSIONS=1 \
       -DBoost_INCLUDE_DIR=../../../boost \
-      -DBOOST_LIBRARYDIR=../../../boost/stage/lib \
+      -DBoost_LIBRARY_DIR=../../../boost/stage/lib \
       ..
 make -j8 install
 cd ..
