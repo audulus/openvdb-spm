@@ -11,4 +11,4 @@ cd tbb
 mkdir build
 cd build
 cmake ..
-make -j 12
+make -j 12 compiler=clang arch=[ia32,intel64,armv7,arm64] stdlib=libc++ stdver=c++0x target=ios tbb
