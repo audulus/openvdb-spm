@@ -20,8 +20,8 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_STATIC_LIBS=YES \
       -DBoost_NO_SYSTEM_PATHS=ON \
       -DBoost_NO_WARN_NEW_VERSIONS=1 \
-      -DBoost_INCLUDE_DIR=../../../boost \
-      -DBoost_LIBRARY_DIR=../../../boost/stage/lib \
+      -DBoost_INCLUDE_DIR=/Users/holliday/openvdb-spm/boost \
+      -DBoost_LIBRARY_DIR=/Users/holliday/openvdb-spm/boost/stage/lib \
       ..
 make -j8 install
 cd ..
