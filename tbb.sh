@@ -1,5 +1,6 @@
 
 rm -rf tbb
+rm -f v2021.10.0.tar.gz
 
 # see https://github.com/Homebrew/homebrew-core/blob/5401dd66d7c7091ab20dcd46efc9ae64eb2b852e/Formula/t/tbb.rb
 
