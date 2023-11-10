@@ -35,4 +35,5 @@ EOF
 # Build for simulator
 # ./b2 -a -j4 toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static $lib 
 
+cd ..
 rm -f boost_1_83_0.tar.bz2
