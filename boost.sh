@@ -27,7 +27,7 @@ using clang : iphonesimulator
 ;
 EOF
 
-./b2 -a -j8 --with-iostreams --with-regex
+./b2 -a -j8 --prefix=/Users/holliday/openvdb-spm --with-iostreams --with-regex install
 
 # Build arm64
 # ./b2 --prefix=deps -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams 
