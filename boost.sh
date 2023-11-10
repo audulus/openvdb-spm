@@ -3,7 +3,7 @@
 
 rm -rf boost
 rm -f boost_1_83_0.tar.bz2
-mkdir -f deps
+mkdir deps
 
 # git clone https://github.com/boostorg/boost.git
 # git submodule update --recursive --init
