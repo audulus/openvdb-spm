@@ -22,6 +22,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBoost_NO_WARN_NEW_VERSIONS=1 \
       -DBoost_INCLUDE_DIR=/Users/holliday/openvdb-spm/boost \
       -DBoost_LIBRARY_DIR=/Users/holliday/openvdb-spm/boost/stage/lib \
+      -DTbb_INCLUDE_DIR=/Users/holliday/openvdb-spm/tbb/include \
       ..
 make -j8 install
 cd ..
