@@ -11,5 +11,8 @@ mv oneTBB-2021.10.0 tbb
 cd tbb
 mkdir build
 cd build
-cmake ..
-make -j 12 compiler=clang arch=[ia32,intel64,armv7,arm64] stdlib=libc++ stdver=c++0x target=ios tbb
+cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm ..
+make -j 12 compiler=clang arch=[ia32,intel64,armv7,arm64] stdlib=libc++ stdver=c++0x target=ios install
+
+rm -f v2021.10.0.tar.gz
+rm -f tbb
