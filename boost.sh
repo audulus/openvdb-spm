@@ -27,9 +27,11 @@ using clang : iphonesimulator
 ;
 EOF
 
+./b2 -a -j8 --with-iostreams 
+
 # Build arm64
-./b2 --prefix=deps -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams 
+# ./b2 --prefix=deps -a -j4 toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams 
 
 # Build for simulator
-#./b2 -a -j4 toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static $lib 
+# ./b2 -a -j4 toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static $lib 
 
