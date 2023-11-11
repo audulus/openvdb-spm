@@ -9,10 +9,18 @@ tar zxf v2021.10.0.tar.gz
 mv oneTBB-2021.10.0 tbb 
 
 cd tbb
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm ..
+
+mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/macos-install ..
+make -j 12 install
+cd ..
+rm -rf build
+
+mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/ios-install ..
 make -j 12 compiler=clang arch=[ia32,intel64,armv7,arm64] stdlib=libc++ stdver=c++0x target=ios install
+cd ..
+rm -rf build
 
 rm -f v2021.10.0.tar.gz
 rm -f tbb
