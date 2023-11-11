@@ -11,19 +11,19 @@ mv oneTBB-2021.10.0 tbb
 cd tbb
 
 mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/macos-install ..
+cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/install-macos ..
 make -j 12 install
 cd ..
 rm -rf build
 
 mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/ios-install ..
+cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/install-ios ..
 make -j 12 compiler=clang arch=[ia32,intel64,armv7,arm64] stdlib=libc++ stdver=c++0x target=ios install
 cd ..
 rm -rf build
 
 mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/ios-sim-install ..
+cmake -DCMAKE_INSTALL_PREFIX=/Users/holliday/openvdb-spm/install-ios-sim ..
 make -j 12 compiler=clang arch=[ia32,intel64,armv7,arm64] stdlib=libc++ stdver=c++0x target=ios-simulator install
 cd ..
 rm -rf build
