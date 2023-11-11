@@ -1,4 +1,6 @@
 
+set -euxo pipefail
+
 # See https://formulae.brew.sh/formula/boost
 
 rm -rf boost
