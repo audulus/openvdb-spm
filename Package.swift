@@ -14,8 +14,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "openvdb",
-            url: "https://github.com/audulus/openvdb-spm/releases/download/v3/openvdb.xcframework.zip",
-            checksum: "fe7013c620730dade109c47854ade8c1ef82df619f744ab2b14a9c41516706ce"
+            url: "https://github.com/audulus/openvdb-spm/releases/download/v4/openvdb.xcframework.zip",
+            checksum: "2ac52d986bfef7ce2ab5baeac621e4e7f8da895db309916e63d94e3122e93b8e"
         )
     ]
 )

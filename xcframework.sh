@@ -11,8 +11,8 @@ sh openvdb.sh
 
 # tbb can't be built as a static library, so we'll use 
 # a separate package
-rm -rf install-macos/include/tbb
-rm -rf install-ios/include/tbb
+rm -rf install-macos/include/tbb install-macos/include/oneapi
+rm -rf install-ios/include/tbb install-ios/include/oneapi
 
 libtool -static -o libopenvdb-macos.a install-macos/lib/libopenvdb.a install-macos/lib/libboost_iostreams.a install-macos/lib/libboost_regex.a install-macos/lib/libblosc.a
 libtool -static -o libopenvdb-ios.a install-ios/lib/libopenvdb.a install-ios/lib/libboost_iostreams.a install-ios/lib/libboost_regex.a install-ios/lib/libblosc.a
