@@ -14,12 +14,12 @@ mv boost_1_83_0 boost
 export prefix=`pwd`
 cd boost
 
-./bootstrap.sh --prefix=$prefix/macos-install
-./b2 -a -j8 --prefix=$prefix/macos-install --with-iostreams --with-regex install
+./bootstrap.sh --prefix=$prefix/install-macos
+./b2 -a -j8 --prefix=$prefix/install-macos --with-iostreams --with-regex install
 ./b2 clean
 
 # Build arm64
-./bootstrap.sh --prefix=$prefix/ios-install
+./bootstrap.sh --prefix=$prefix/install-ios
 
 cat << EOF >> project-config.jam
 # IOS ARM64
@@ -28,11 +28,11 @@ using clang : iphoneos
 ;
 EOF
 
-./b2 -a -j8 --prefix=$prefix/ios-install toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams --with-regex install
+./b2 -a -j8 --prefix=$prefix/install-ios toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams --with-regex install
 ./b2 clean
 
 # Build for simulator
-./bootstrap.sh --prefix=$prefix/ios-sim-install
+./bootstrap.sh --prefix=$prefix/install-ios-sim
 
 cat << EOF >> project-config.jam
 # IOS simulator arm64 
@@ -41,7 +41,7 @@ using clang : iphonesimulator
 ;
 EOF
 
-./b2 -a -j8 --prefix=$prefix/ios-sim-install toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static --with-iostreams --with-regex install
+./b2 -a -j8 --prefix=$prefix/install-ios-sim toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static --with-iostreams --with-regex install
 ./b2 clean
 
 cd ..
