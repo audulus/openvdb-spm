@@ -25,4 +25,5 @@ cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-ios \
 cmake --build . --target install
 cd ..
 
+cd ..
 rm -rf c-blosc-1.21.5 v1.21.5.tar.gz
