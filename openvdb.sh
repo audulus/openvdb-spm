@@ -16,6 +16,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
       -DCMAKE_INSTALL_PREFIX=$prefix/install-macos \
       -DCMAKE_PREFIX_PATH=$prefix/install-macos \
+      -DOPENVDB_BUILD_BINARIES=OFF \
       ..
 make -j12 install
 cd ..
