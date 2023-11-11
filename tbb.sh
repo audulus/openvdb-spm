@@ -27,4 +27,4 @@ make -j 12 install target=ios
 cd ..
 
 rm -f v2021.10.0.tar.gz
-rm -f tbb
+rm -rf tbb
