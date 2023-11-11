@@ -19,7 +19,7 @@ cd boost
 ./b2 clean
 
 # Build arm64
-./bootstrap.sh --prefix=$prefix/install-ios
+./bootstrap.sh --prefix=$prefix/install-ios --with-libraries=iostreams,regex
 
 cat << EOF >> project-config.jam
 # IOS ARM64
