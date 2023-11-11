@@ -25,6 +25,11 @@ cmake -DCMAKE_BUILD_TYPE=Release \
 make -j12 install
 cd ..
 
+xcodebuild -create-xcframework \
+           -library install-macos/lib/libopenvdb.a \
+           -headers install-macos/include/openvdb \
+           -output openvdb.xcframework
+
 # iOS build
 # mkdir build_ios
 # cd build_ios
