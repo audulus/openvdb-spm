@@ -10,10 +10,10 @@ sh tbb.sh
 sh openvdb.sh
 
 xcodebuild -create-xcframework \
-           -library install-macos/lib/libopenvdb.11.0.0.dylib \
-           -headers install-macos/include/openvdb \
-           -library install-ios/lib/libopenvdb.11.0.0.dylib \
-           -headers install-ios/include/openvdb \
+           -library install-macos/lib/libopenvdb.a \
+           -headers install-macos/include \
+           -library install-ios/lib/libopenvdb.a \
+           -headers install-ios/include \
            -output openvdb.xcframework
 
 zip -r openvdb.xcframework.zip openvdb.xcframework
