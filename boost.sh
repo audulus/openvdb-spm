@@ -47,5 +47,4 @@ EOF
 ./b2 clean
 
 cd ..
-rm -rf boost
-rm -f boost_1_83_0.tar.bz2
+rm -rf boost boost_1_83_0.tar.bz2
