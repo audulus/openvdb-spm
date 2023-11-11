@@ -26,5 +26,4 @@ cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios \
 make -j 12 install target=ios
 cd ..
 
-rm -f v2021.10.0.tar.gz
-rm -rf tbb
+rm -rf tbb v2021.10.0.tar.gz
