@@ -13,3 +13,15 @@ mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-macos ..
 cmake --build . --target install
+cd ..
+
+mkdir build-ios
+cd build-ios
+cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-ios \
+      -DCMAKE_SYSTEM_NAME=iOS \
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+      -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake \
+      -DPLATFORM=OS64 \
+      ..
+cmake --build . --target install
+cd ..
