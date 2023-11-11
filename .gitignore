@@ -11,3 +11,4 @@ boost_1_83_0
 openvdb-11.0.0
 v11.0.0.tar.gz
 c-blosc-1.21.5
+openvdb.xcframework
