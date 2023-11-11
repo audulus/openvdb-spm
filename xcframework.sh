@@ -6,6 +6,7 @@ rm -rf install-ios install-macos install-ios-sim
 
 sh boost.sh
 sh c-blosc.sh
+sh tbb.sh
 sh openvdb.sh
 
 xcodebuild -create-xcframework \
