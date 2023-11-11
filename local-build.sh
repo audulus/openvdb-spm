@@ -1,17 +1,18 @@
 
 # Builds OpenVDB locally using homebrew packages
 
-git clone https://github.com/AcademySoftwareFoundation/openvdb.git 
-cd openvdb 
-git checkout tags/v10.0.1
+rm -rf openvdb-11.0.0
+rm -f v11.0.0.tar.gz
+
+wget https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v11.0.0.tar.gz
+tar zxf v11.0.0.tar.gz
+cd openvdb-11.0.0
 
 brew install boost tbb c-blosc
 
 # macOS build
 mkdir build
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release \
-      "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
-      -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
-      ..
+cmake ..
+make -j 8
 
