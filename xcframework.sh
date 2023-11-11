@@ -8,6 +8,8 @@ rm -rf openvdb.xcframework
 rm -rf openvdb-11.0.0
 rm -f v11.0.0.tar.gz
 
+export prefix=`pwd`
+
 wget https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v11.0.0.tar.gz
 tar zxf v11.0.0.tar.gz
 cd openvdb-11.0.0
@@ -18,10 +20,10 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Release \
       "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
-      -DCMAKE_INSTALL_PREFIX="$(pwd)/install" \
-      -DCMAKE_PREFIX_PATH=/Users/holliday/openvdb-spm \
+      -DCMAKE_INSTALL_PREFIX=$prefix/install-macos \
+      -DCMAKE_PREFIX_PATH=$prefix/install-macos \
       ..
-make -j8 install
+make -j12 install
 cd ..
 
 # iOS build
