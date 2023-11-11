@@ -1,6 +1,5 @@
 
-rm -rf c-blosc-1.21.5
-rm -f v1.21.5.tar.gz
+rm -rf c-blosc-1.21.5 v1.21.5.tar.gz
 
 wget https://github.com/Blosc/c-blosc/archive/refs/tags/v1.21.5.tar.gz
 tar zxf v1.21.5.tar.gz
@@ -25,3 +24,5 @@ cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-ios \
       ..
 cmake --build . --target install
 cd ..
+
+rm -rf c-blosc-1.21.5 v1.21.5.tar.gz
