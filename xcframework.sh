@@ -18,7 +18,6 @@ cd openvdb-11.0.0
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release \
-      "-DCMAKE_OSX_ARCHITECTURES=arm64;x86_64" \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
       -DCMAKE_INSTALL_PREFIX=$prefix/install-macos \
       -DCMAKE_PREFIX_PATH=$prefix/install-macos \
