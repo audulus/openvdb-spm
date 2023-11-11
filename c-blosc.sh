@@ -11,5 +11,5 @@ cd c-blosc-1.21.5
 
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=$prefix/macos-install ..
+cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-macos ..
 cmake --build . --target install
