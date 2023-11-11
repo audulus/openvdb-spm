@@ -23,7 +23,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios \
       -DCMAKE_SYSTEM_NAME=iOS \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
       ..
-make -j 12 tbb target=ios
+make -j 12 install target=ios
 cd ..
 
 rm -f v2021.10.0.tar.gz
