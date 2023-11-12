@@ -13,7 +13,9 @@ mv oneTBB-2021.10.0 tbb
 cd tbb
 
 mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=$root/install-macos ..
+cmake -DCMAKE_INSTALL_PREFIX=$root/install-macos \
+      -DBUILD_SHARED_LIBS=OFF \
+      ..
 make -j 12 install
 cd ..
 rm -rf build
@@ -22,6 +24,7 @@ mkdir build-ios && cd build-ios
 cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios \
       -DCMAKE_SYSTEM_NAME=iOS \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+      -DBUILD_SHARED_LIBS=OFF \
       ..
 make -j 12 install target=ios
 cd ..
