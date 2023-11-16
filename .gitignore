@@ -13,3 +13,4 @@ v11.0.0.tar.gz
 c-blosc-1.21.5
 openvdb.xcframework
 openvdb.xcframework.zip
+*.a
