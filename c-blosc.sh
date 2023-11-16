@@ -25,5 +25,14 @@ cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-ios \
 cmake --build . --target install
 cd ..
 
+mkdir build-ios-sim
+cd build-ios-sim
+cmake -DCMAKE_INSTALL_PREFIX=$prefix/install-ios-sim \
+      -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake \
+      -DPLATFORM=SIMULATORARM64 \
+      ..
+cmake --build . --target install
+cd ..
+
 cd ..
 rm -rf c-blosc-1.21.5 v1.21.5.tar.gz
