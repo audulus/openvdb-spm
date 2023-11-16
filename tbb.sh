@@ -15,6 +15,7 @@ cd tbb
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=$root/install-macos \
       -DBUILD_SHARED_LIBS=OFF \
+      -DTBB_TEST=OFF \
       ..
 make -j 12 install
 cd ..
@@ -25,6 +26,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios \
       -DCMAKE_SYSTEM_NAME=iOS \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
       -DBUILD_SHARED_LIBS=OFF \
+      -DTBB_TEST=OFF \
       ..
 make -j 12 install target=ios
 cd ..
