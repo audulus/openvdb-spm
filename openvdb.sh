@@ -17,6 +17,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=$root/install-macos \
       -DCMAKE_PREFIX_PATH=$root/install-macos \
       -DOPENVDB_BUILD_BINARIES=OFF \
+      -DOPENVDB_CORE_SHARED=OFF \
       ..
 make -j12 install
 cd ..
@@ -34,6 +35,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=$root/install-ios \
       -DCMAKE_PREFIX_PATH=$root/install-ios \
       -DOPENVDB_BUILD_BINARIES=OFF \
+      -DOPENVDB_CORE_SHARED=OFF \
       ..
 make -j12 install
 cd ..
