@@ -44,7 +44,7 @@ IOSSIM_SDK_PATH=$(xcrun --sdk iphonesimulator --show-sdk-path)
 cat << EOF >> project-config.jam
 # IOS Arm Simulator
 using clang : iphonesimulatorarm64
-: xcrun clang -arch arm64 -stdlib=libc++ -std=c++11 -miphoneos-version-min=10.0 -fvisibility-inlines-hidden -target arm64-apple-ios10.0-simulator -isysroot $IOSSIM_SDK_PATH
+: xcrun clang++ -arch arm64 -stdlib=libc++ -std=c++20 -miphoneos-version-min=16.0 -fvisibility-inlines-hidden -target arm64-apple-ios16.0-simulator -isysroot $IOSSIM_SDK_PATH
 ;
 EOF
 
