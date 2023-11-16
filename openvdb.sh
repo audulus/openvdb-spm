@@ -3,7 +3,7 @@ set -euxo pipefail
 rm -rf openvdb-11.0.0
 rm -f v11.0.0.tar.gz
 
-export prefix=`pwd`
+export root=`pwd`
 
 wget https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v11.0.0.tar.gz
 tar zxf v11.0.0.tar.gz
@@ -14,8 +14,8 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
-      -DCMAKE_INSTALL_PREFIX=$prefix/install-macos \
-      -DCMAKE_PREFIX_PATH=$prefix/install-macos \
+      -DCMAKE_INSTALL_PREFIX=$root/install-macos \
+      -DCMAKE_PREFIX_PATH=$root/install-macos \
       -DOPENVDB_BUILD_BINARIES=OFF \
       ..
 make -j12 install
@@ -30,8 +30,8 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake \
       -DPLATFORM=OS64 \
       -DDEPLOYMENT_TARGET=16.0 \
-      -DCMAKE_INSTALL_PREFIX=$prefix/install-ios \
-      -DCMAKE_PREFIX_PATH=$prefix/install-ios \
+      -DCMAKE_INSTALL_PREFIX=$root/install-ios \
+      -DCMAKE_PREFIX_PATH=$root/install-ios \
       -DOPENVDB_BUILD_BINARIES=OFF \
       ..
 make -j12 install
