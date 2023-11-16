@@ -39,3 +39,20 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       ..
 make -j12 install
 cd ..
+
+# iOS simulator build
+mkdir build-ios-sim
+cd build-ios-sim
+cmake -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_SYSTEM_NAME=iOS \
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0 \
+      -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake \
+      -DPLATFORM=SIMULATORARM64 \
+      -DDEPLOYMENT_TARGET=16.0 \
+      -DCMAKE_INSTALL_PREFIX=$root/install-ios-sim \
+      -DCMAKE_PREFIX_PATH=$root/install-ios-sim \
+      -DOPENVDB_BUILD_BINARIES=OFF \
+      -DOPENVDB_CORE_SHARED=OFF \
+      ..
+make -j12 install
+cd ..
