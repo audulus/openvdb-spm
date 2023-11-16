@@ -1,7 +1,7 @@
 
 set -euxo pipefail
 
-rm -rf openvdb.xcframework
+rm -rf openvdb.xcframework openvdb.xcframework.zip
 rm -rf install-ios install-macos install-ios-sim
 
 sh boost.sh
