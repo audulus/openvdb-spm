@@ -29,5 +29,12 @@ cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios \
 make -j 12 install target=ios
 cd ..
 
+mkdir build-ios-sim && cd build-ios-sim
+cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios-sim \
+      -DBUILD_SHARED_LIBS=OFF \
+      ..
+make -j 12 install target=ios-simulator
+cd ..
+
 cd ..
 rm -rf tbb v2021.10.0.tar.gz
