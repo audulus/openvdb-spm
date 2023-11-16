@@ -16,8 +16,10 @@ mv boost_1_83_0 boost
 export root=`pwd`
 cd boost
 
+B2_ARGS="-a -j8 --with-iostreams --with-regex"
+
 ./bootstrap.sh --prefix=$root/install-macos
-./b2 -a -j8 --prefix=$root/install-macos --with-iostreams --with-regex install
+./b2 $B2_ARGS --prefix=$root/install-macos link=static install
 ./b2 clean
 
 # Build arm64
@@ -30,7 +32,7 @@ using clang : iphoneos
 ;
 EOF
 
-./b2 -a -j8 --prefix=$root/install-ios toolset=clang-iphoneos binary-format=mach-o abi=aapcs --with-iostreams --with-regex install
+./b2 $B2_ARGS --prefix=$root/install-ios toolset=clang-iphoneos binary-format=mach-o abi=aapcs install
 ./b2 clean
 
 # Build for simulator
@@ -43,7 +45,7 @@ using clang : iphonesimulator
 ;
 EOF
 
-./b2 -a -j8 --prefix=$root/install-ios-sim toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static --with-iostreams --with-regex install
+./b2 $B2_ARGS --prefix=$root/install-ios-sim toolset=clang-iphonesimulator binary-format=mach-o abi=sysv link=static install
 ./b2 clean
 
 cd ..
