@@ -31,7 +31,11 @@ cd ..
 
 mkdir build-ios-sim && cd build-ios-sim
 cmake -DCMAKE_INSTALL_PREFIX=$root/install-ios-sim \
+      -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake \
+      -DCMAKE_SYSTEM_NAME=iOS-Simulator \
+      -DPLATFORM=SIMULATORARM64 \
       -DBUILD_SHARED_LIBS=OFF \
+      -DTBB_TEST=OFF \
       ..
 make -j 12 install target=ios-simulator
 cd ..
