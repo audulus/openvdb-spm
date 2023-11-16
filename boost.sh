@@ -2,6 +2,7 @@
 set -euxo pipefail
 
 # See https://formulae.brew.sh/formula/boost
+# See https://stackoverflow.com/questions/1577838/how-to-build-boost-libraries-for-iphone
 
 rm -rf boost
 rm -f boost_1_83_0.tar.bz2
