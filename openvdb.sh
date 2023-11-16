@@ -28,6 +28,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_SYSTEM_NAME=iOS \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=12.0 \
       -DCMAKE_TOOLCHAIN_FILE=../../ios.toolchain.cmake \
+      -DBUILD_SHARED_LIBS=OFF \
       -DPLATFORM=OS64 \
       -DDEPLOYMENT_TARGET=16.0 \
       -DCMAKE_INSTALL_PREFIX=$root/install-ios \
