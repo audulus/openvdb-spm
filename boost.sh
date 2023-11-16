@@ -16,7 +16,7 @@ mv boost_1_83_0 boost
 export root=`pwd`
 cd boost
 
-B2_ARGS="-a -j8 --with-iostreams --with-regex"
+B2_ARGS="-a -j12 --with-iostreams --with-regex"
 
 ./bootstrap.sh --prefix=$root/install-macos
 ./b2 $B2_ARGS --prefix=$root/install-macos link=static install
