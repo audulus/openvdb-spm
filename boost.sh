@@ -25,10 +25,11 @@ B2_ARGS="-a -j8 --with-iostreams --with-regex"
 # Build arm64
 ./bootstrap.sh --prefix=$root/install-ios --with-libraries=iostreams,regex
 
+IOS_SDK_PATH=$(xcrun --sdk iphoneos --show-sdk-path)
 cat << EOF >> project-config.jam
 # IOS ARM64
 using clang : iphoneos
-: xcrun clang++ -arch arm64 -stdlib=libc++ -std=c++20 -miphoneos-version-min=12.0 -fvisibility-inlines-hidden -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk
+: xcrun clang++ -arch arm64 -stdlib=libc++ -std=c++20 -miphoneos-version-min=12.0 -fvisibility-inlines-hidden -isysroot $IOS_SDK_PATH
 ;
 EOF
 
@@ -38,10 +39,11 @@ EOF
 # Build for simulator
 ./bootstrap.sh --prefix=$root/install-ios-sim
 
+IOSSIM_SDK_PATH=$(xcrun --sdk iphonesimulator --show-sdk-path)
 cat << EOF >> project-config.jam
 # IOS simulator arm64 
 using clang : iphonesimulator
-: xcrun clang++ -arch arm64 -stdlib=libc++ -std=c++20 -miphoneos-version-min=12.0 -fvisibility-inlines-hidden -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
+: xcrun clang++ -arch arm64 -stdlib=libc++ -std=c++20 -miphoneos-version-min=12.0 -fvisibility-inlines-hidden -isysroot $IOSSIM_SDK_PATH
 ;
 EOF
 
